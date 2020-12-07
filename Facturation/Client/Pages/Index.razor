@@ -1,0 +1,25 @@
+﻿@page "/"
+
+@using Facturation.Shared 
+@inject NavigationManager nav_fact
+@inject BusinessData fac
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button>Entrer une facture</button>
+<ul>
+    @foreach(var fac in fac.les_factures)
+    {
+        <li><a href="/detail/@fac.Id"> Client : @fac.GetClient().getNom(), Prix total : @fac.getTotal() </a></li>
+    }
+</ul>
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code{ 
+    private void Page_nouvelle_facture()
+    {
+        nav_fact.NavigateTo("/Contractants");
+    }
+}
