@@ -24,42 +24,32 @@ namespace Facturation.Shared
 
         public int Id { get; }
 
-        public Entreprise GetEntreprise()
-        {
-            return this.notre_entreprise;
-        }
-        public Client GetClient()
-        {
-            return this.ceClient;
-        }
+        public Entreprise Entreprise => notre_entreprise;
 
-        public DateTime getFactDate()
-        {
-            return this.date_de_facture;
-        }
-        public DateTime getLivrDate()
-        {
-            return this.date_de_livraison;
-        }
+        public Client Client => ceClient;
 
-        public List<ListCommande> GetLists()
-        {
-            return this.listCommandes;
-        }
+        public DateTime FactureDate => date_de_facture;
+        public DateTime LivrableDate => date_de_livraison;
 
-        public int getTotal_HT()
-        {
-            int tot = 0;
-            foreach (var prix in this.listCommandes)
+        public List<ListCommande> ListsCommandes => listCommandes;
+
+        public int Total_HT { get
             {
-                tot += prix.getPrix_HT();
+                int tot = 0;
+                foreach (var prix in this.listCommandes)
+                {
+                    tot += prix.Prix_HT;
+                }
+                return tot;
             }
-            return tot;
         }
+        
 
-        public int getTotal()
-        {
-            return getTotal_HT() + getTotal_HT() % 20;
+        public int Total { get
+            {
+                return Total_HT + Total_HT % 20;
+            }
         }
+        
     }
 }

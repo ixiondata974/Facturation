@@ -6,7 +6,7 @@ namespace Facturation.Shared
 {
     public class BusinessData
     {
-        private Entreprise monEntreprise = new Entreprise("Toto", "21 rue Tartanpion", "Bordeaux", 33000, 54484661, 06785194);
+        private Entreprise monEntreprise = new Entreprise("Gakuen", "21 rue Tartanpion", "Bordeaux", 33000, 54484661, 06785194);
         private Client unClient = new Client("Tata", "33 rue des fesses", "St-Pierre", 97410);
         private Client unClient2 = new Client("Titi", "32 rue des fesses", "St-Pierre", 97410);
         private Client unClient3 = new Client("Tonton", "31 rue des fesses", "St-Pierre", 97410);

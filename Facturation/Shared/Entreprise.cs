@@ -14,13 +14,7 @@ namespace Facturation.Shared
             this.tel = Tel;
         }
 
-        public int getSiret()
-        {
-            return this.siret;
-        }
-        public int getTel()
-        {
-            return this.tel;
-        }
+        public int Siret => siret;
+        public int Tel => tel;
     }
 }

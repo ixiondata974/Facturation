@@ -12,24 +12,24 @@ else
 {
     <section>
         <h4>Société</h4>
-        <p>@courante.GetEntreprise().getNom()</p>
-        <p>@courante.GetEntreprise().getAdresse()</p>
-        <p>@courante.GetEntreprise().getCp()</p>
-        <p>@courante.GetEntreprise().getVille()</p>
-        <p>@courante.GetEntreprise().getSiret()</p>
-        <p>@courante.GetEntreprise().getTel()</p>
+        <p>@courante.Entreprise.Nom</p>
+        <p>@courante.Entreprise.Adresse</p>
+        <p>@courante.Entreprise.Cp</p>
+        <p>@courante.Entreprise.Ville</p>
+        <p>@courante.Entreprise.Siret</p>
+        <p>@courante.Entreprise.Tel</p>
     </section>
     <section>
         <h4>Client</h4>
-        <p>@courante.GetClient().getNom()</p>
-        <p>@courante.GetClient().getAdresse()</p>
-        <p>@courante.GetClient().getCp()</p>
-        <p>@courante.GetClient().getVille()</p>
+        <p>@courante.Client.Nom</p>
+        <p>@courante.Client.Adresse</p>
+        <p>@courante.Client.Cp</p>
+        <p>@courante.Client.Ville</p>
     </section>
     <section>
         <h4>Dates</h4>
-        <p>Date de la facture : @courante.getFactDate()</p>
-        <p>Date de livraison : @courante.getLivrDate()</p>
+        <p>Date de la facture : @courante.FactureDate</p>
+        <p>Date de livraison : @courante.LivrableDate</p>
     </section>
 
     <table>
@@ -39,15 +39,15 @@ else
             <th>Prix total HT</th>
         </tr>
         <tr>
-            @foreach (var listCom in courante.GetLists())
+            @foreach (var listCom in courante.ListsCommandes)
             {
-                <td>@listCom.getQuantite()</td>
-                <td>@listCom.getDesignation()</td>
-                <td>@listCom.getPrix_HT()</td>
+                <td>@listCom.Quantite</td>
+                <td>@listCom.Designation</td>
+                <td>@listCom.Prix_HT</td>
             }
         </tr>
     </table>
-    <h2>Prix TTC : @courante.getTotal()</h2>
+    <h2>Prix TTC : @courante.Total</h2>
 }
 
 

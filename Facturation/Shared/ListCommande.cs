@@ -17,17 +17,8 @@ namespace Facturation.Shared
             this.prix_unit_HT = Prix;
         }
 
-        public String getDesignation()
-        {
-            return this.designation;
-        }
-        public int getQuantite()
-        {
-            return this.quantite;
-        }
-        public int getPrix_HT()
-        {
-            return this.prix_unit_HT;
-        }
+        public String Designation => designation;
+        public int Quantite => quantite;
+        public int Prix_HT => prix_unit_HT;
     }
 }

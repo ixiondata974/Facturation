@@ -2,19 +2,13 @@
 
 @using Facturation.Shared 
 @inject NavigationManager nav_fact
-@inject BusinessData fac
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<button>Entrer une facture</button>
-<ul>
-    @foreach(var fac in fac.les_factures)
-    {
-        <li><a href="/detail/@fac.Id"> Client : @fac.GetClient().getNom(), Prix total : @fac.getTotal() </a></li>
-    }
-</ul>
+<button><a href="/info">Liste des factures</a></button>
+
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 @code{ 
