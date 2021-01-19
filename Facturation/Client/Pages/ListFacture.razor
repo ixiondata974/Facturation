@@ -1,0 +1,30 @@
+﻿@page "/info"
+
+@using Facturation.Shared
+@inject HttpClient http
+
+<h3>ListFacture</h3>
+@if (Allfactures == null)
+{
+<p>Interrogation du serveur...</p>
+}
+else
+{
+<ul>
+    @foreach (var fact in Allfactures)
+    {
+        <li><a href="/detail/@fact.Id"> Client : @fact.Client, Prix total : @fact.TotalTTC </a></li>
+    }
+</ul>
+<p>Chiffre d'affaire : @Ca.ToString()</p>
+@code { 
+    private IEnumerable<Facture> Allfactures = null;
+    private decimal Ca;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Allfactures = await http.GetFromJsonAsync<IEnumerable<Facture>>("api/Facture");
+        Ca = await http.GetFromJsonAsync<decimal>("api/Facture/CA");
+    }
+}
+}

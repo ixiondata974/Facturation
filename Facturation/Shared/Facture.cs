@@ -6,12 +6,19 @@ namespace Facturation.Shared
 {
     public class Facture
     {
+        /*
         private Entreprise notre_entreprise;
         private Client ceClient;
         private List<ListCommande> listCommandes;
         private DateTime date_de_facture;
         private DateTime date_de_livraison;
         private static int id = 0;
+
+        public Facture()
+        {
+
+        }
+
         public Facture(Entreprise Notre, Client unClient, List<ListCommande> uneListCommandes, DateTime date_Fact, DateTime date_livr)
         {
             Id = id++;
@@ -61,5 +68,35 @@ namespace Facturation.Shared
         {
             return getTotal_HT() + getTotal_HT() % 20;
         }
+<<<<<<< Updated upstream
+=======
+        */
+
+        private string client;
+        private string commande;
+        private int totalTTC;
+
+        private DateTime date_de_livraison;
+        private int id;
+        
+        public Facture(int Id, string Client, string Commande, int TotalTTC, DateTime Date_de_livraison)
+        {
+            this.id = Id;
+            this.client = Client;
+            this.commande = Commande;
+            this.totalTTC = TotalTTC;
+            this.date_de_livraison = Date_de_livraison;
+        }
+        public Facture()
+        {
+
+        }
+
+        public int Id { get => id; set => id = value; }
+        public string Client { get => client; set => client = value; }
+        public string Commande { get => commande; set => commande = value; }
+        public int TotalTTC { get => totalTTC; set => totalTTC = value; }
+        public DateTime LivrableDate { get => date_de_livraison; set => date_de_livraison = value; }
+>>>>>>> Stashed changes
     }
 }

@@ -6,6 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+<<<<<<< Updated upstream
+=======
+using Facturation.Shared;
+using Facturation.Server.Models;
+>>>>>>> Stashed changes
 
 namespace Facturation.Server
 {
@@ -22,7 +27,15 @@ namespace Facturation.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< Updated upstream
 
+=======
+            services.AddScoped<IBusinessData>(services => new BusinessDataSQL(
+                    Configuration.GetConnectionString("facturation")
+                )
+            );
+            //services.AddSingleton<BusinessData>(sp => new BusinessData());
+>>>>>>> Stashed changes
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
