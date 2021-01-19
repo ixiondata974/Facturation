@@ -68,8 +68,6 @@ namespace Facturation.Shared
         {
             return getTotal_HT() + getTotal_HT() % 20;
         }
-<<<<<<< Updated upstream
-=======
         */
 
         private string client;
@@ -97,6 +95,5 @@ namespace Facturation.Shared
         public string Commande { get => commande; set => commande = value; }
         public int TotalTTC { get => totalTTC; set => totalTTC = value; }
         public DateTime LivrableDate { get => date_de_livraison; set => date_de_livraison = value; }
->>>>>>> Stashed changes
     }
 }

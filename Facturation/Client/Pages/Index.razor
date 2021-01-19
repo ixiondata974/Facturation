@@ -12,7 +12,7 @@ Welcome to your new app.
 <ul>
     @foreach(var fac in fac.les_factures)
     {
-        <li><a href="/detail/@fac.Id"> Client : @fac.GetClient().getNom(), Prix total : @fac.getTotal() </a></li>
+        <li><a href="/detail/@fac.Id"> Client : @fac.Client, Prix total : @fac.TotalTTC </a></li>
     }
 </ul>
 <SurveyPrompt Title="How is Blazor working for you?" />
